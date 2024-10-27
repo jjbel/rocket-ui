@@ -13,7 +13,11 @@ The app is build from the ground up to be high performant and easy to use:
 - 🖹 the source code is < 200 lines, since it relies heavily on the samarium library for plotting.
 - ✨ flexibly specify data format in a `format.json` file
 
-## Prerequisites
+### [Download the latest release now!](https://github.com/jjbel/rocket-ui/releases)
+
+## Building
+
+### Prerequisites
 
 You will need git, python and a C++ compiler.
 The app is build using [samarium](https://github.com/jjbel/samarium); install it:
@@ -23,7 +27,7 @@ git clone --depth 1 https://github.com/jjbel/samarium.git
 conan create ./samarium/ -b missing
 ```
 
-## Building
+### Building
 
 In a new directory, run:
 
