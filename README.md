@@ -5,8 +5,8 @@ The data is received live, for example from a Raspberry Pi connected over serial
 
 The app is build from the ground up to be high performant and easy to use:
 
-- 🌐 Single executable file, run from anywhere
-- ⚡ Time to first draw is 
+- ⚡ Time to first draw is just 200ms
+- 🌐 Single executable file, run from anywhere, no dependencies
 - 📥The executable is a mere **1MB**. This was the motivation to move on from ~300MB electron apps.
 - 🖥️ Windows and Linux support
 
