@@ -4,13 +4,13 @@ cmake_minimum_required(VERSION 3.16) # At least CMake-3.16 is required
 find_program(CONAN_EXE conan REQUIRED)
 execute_process(
         # TODO conan args: make sure they're correct
-        COMMAND ${CONAN_EXE} install ..
+        COMMAND ${CONAN_EXE} install .
         -b missing
         # -vquiet
-        # -if ${CMAKE_BINARY_DIR}
+        -of ${CMAKE_BINARY_DIR}
         # -pr:b=default -pr=default
         -s build_type=${CMAKE_BUILD_TYPE}
-        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         # OUTPUT_QUIET
         # TODO output_quiet not working? using -vquiet
         # TODO how to silence output from individual lib files
@@ -22,7 +22,7 @@ project(rocket-ui CXX) # Create Project
 
 find_package(samarium CONFIG REQUIRED)
 
-add_executable(rocket-ui ${file})
+add_executable(rocket-ui main.cpp)
 target_compile_features(rocket-ui PUBLIC cxx_std_20) # set C++ standard
 target_link_libraries(rocket-ui samarium::samarium)
 
