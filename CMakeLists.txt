@@ -6,14 +6,11 @@ execute_process(
         # TODO conan args: make sure they're correct
         COMMAND ${CONAN_EXE} install .
         -b missing
-        -vquiet
+        # -vquiet
         -of ${CMAKE_BINARY_DIR}
         # -pr:b=default -pr=default
         -s build_type=${CMAKE_BUILD_TYPE}
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        # OUTPUT_QUIET
-        # TODO output_quiet not working? using -vquiet
-        # TODO how to silence output from individual lib files
     )
 
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_BINARY_DIR}/conan_toolchain.cmake)

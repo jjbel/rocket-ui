@@ -28,11 +28,18 @@ jobs:
       - name: Install Samarium
         run: conan install ./samarium/ -b missing
 
-    #   - name: Conan download packages
-    #     run: conan install . -b missing
+      #   - name: Conan download packages
+      #     run: conan install . -b missing
 
       - name: CMake Configure
         run: cmake --preset=default
 
       - name: CMake Build
         run: cmake --build --preset=default
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ./build/Release/rocket-ui.exe
+            format.json
