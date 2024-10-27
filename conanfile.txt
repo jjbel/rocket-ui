@@ -1,0 +1,6 @@
+[requires]
+samarium/1.1.0
+
+[generators]
+CMakeDeps
+CMakeToolchain
