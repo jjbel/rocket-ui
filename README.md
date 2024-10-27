@@ -1,27 +1,36 @@
-# Samarium Example
+# Rocket UI 🚀
 
-This is a fully self-contained example project for [samarium](https://github.com/strangeQuark1041/samarium), a 2-D physics simulation engine written in modern C++
+A blazing fast and dead-simple telemetry app, to show and plot data.
+The data is received live, for example from a Raspberry Pi connected over serial or WiFi.
 
-## Prerequistes
+The app is build from the ground up to be high performant and easy to use:
 
-| Dependency | URL | Documentation |
-| ---        | --- | --- |
-| python     | <https://www.python.org/downloads/> | https://www.python.org/doc/ |
-| git        | <https://git-scm.com/downloads/> | https://git-scm.com/docs/ |
-| cmake      | <https://cmake.org/download/> | https://cmake.org/cmake/help/latest/ |
-| conan      | <https://conan.io/downloads.html/> | https://docs.conan.io/en/latest/ |
+- 🌐 Single executable file, run from anywhere
+- ⚡ Time to first draw is 
+- 📥The executable is a mere **1MB**. This was the motivation to move on from ~300MB electron apps.
+- 🖥️ Windows and Linux support
 
-## Install and Run
+## Prerequisites
+
+You will need git, python and a C++ compiler.
+The app is build using [samarium](https://github.com/jjbel/samarium); install it:
+
+```sh
+git clone --depth 1 https://github.com/jjbel/samarium.git
+conan create ./samarium/ -b missing
+```
+
+## Building
 
 In a new directory, run:
 
 ```sh
-git clone --depth 1 https://github.com/strangeQuark1041/samarium_example.git . # Get code
+git clone https://github.com/jjbel/rocket-ui.git . # Get code
 
 cmake --preset=default # Configure CMake
 cmake --build --preset=default # Compile example
 
-./build/bin/example # Run example
+# Run example
+./build/bin/rocket-ui # on Linux
+.\build\Release\rocket-ui # on Windows
 ```
-
-For more details see [the library](https://github.com/strangeQuark1041/samarium/) and [the docs](https://strangequark1041.github.io/samarium_docs/)
