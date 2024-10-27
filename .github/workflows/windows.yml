@@ -28,8 +28,8 @@ jobs:
       - name: Install Samarium
         run: conan install ./samarium/ -b missing
 
-      - name: Conan download packages
-        run: conan install . -b missing
+    #   - name: Conan download packages
+    #     run: conan install . -b missing
 
       - name: CMake Configure
         run: cmake --preset=default
