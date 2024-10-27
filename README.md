@@ -5,10 +5,11 @@ The data is received live, for example from a Raspberry Pi connected over serial
 
 The app is build from the ground up to be high performant and easy to use:
 
-- ⚡ Time to first draw is just 200ms
+- ⚡ [Time to first draw](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint) is just 200ms
 - 🌐 Single executable file, run from anywhere, no dependencies
-- 📥The executable is a mere **1MB**. This was the motivation to move on from ~300MB electron apps.
+- 📥The executable is a mere **1MB**. This was the motivation to move on from ~300MB [electron apps](https://github.com/jjbel/rocket-ui-js).
 - 🖥️ Windows and Linux support
+- the source code is < 200 lines, since it relies heavily on the samarium library for plotting.
 
 ## Prerequisites
 
