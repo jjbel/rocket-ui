@@ -1,0 +1,38 @@
+name: Windows Build
+
+on: [push, pull_request, fork, workflow_dispatch]
+
+env:
+  # Path to the CMake build directory.
+  build: "${{ github.workspace }}/build"
+  CONAN_SYSREQUIRES_MODE: "enabled"
+  CONAN_USER_HOME: "${{ github.workspace }}/release/"
+  CONAN_USER_HOME_SHORT: "${{ github.workspace }}/release/short"
+
+jobs:
+  test:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clone Samarium
+        run: git clone --depth 1 https://github.com/jjbel/samarium.git
+
+      - name: Install CMake
+        run: python ./samarium/scripts/bootstrap/install_cmake.py
+
+      - name: Install Conan
+        id: conan
+        run: python ./samarium/scripts/bootstrap/install_conan.py
+
+      - name: Install Samarium
+        run: conan install ./samarium/ -b missing
+
+      - name: Conan download packages
+        run: conan install . -b missing
+
+      - name: CMake Configure
+        run: cmake --preset=default
+
+      - name: CMake Build
+        run: cmake --build --preset=default
