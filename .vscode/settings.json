@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        ".tokeignore": "gitignore",
+        "*.toml": "toml",
+        "xstring": "cpp"
+    }
+}
