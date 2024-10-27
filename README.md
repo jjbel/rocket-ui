@@ -3,6 +3,8 @@
 A blazing fast and dead-simple telemetry app, to show and plot data.
 The data is received live, for example from a Raspberry Pi connected over serial or WiFi.
 
+[](https://github.com/user-attachments/assets/ed1bcfde-352b-4792-b66d-fdcae2a5544c)
+
 The app is build from the ground up to be high performant and easy to use:
 
 - ⚡ The app consistently runs at **500fps**
