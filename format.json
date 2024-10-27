@@ -1,0 +1,177 @@
+{
+    "port": "COM5",
+    "grid_dims": [
+        3,
+        2
+    ],
+    "plots": [
+        {
+            "key": "acc",
+            "title": "Acceleration",
+            "position": [
+                0,
+                1
+            ],
+            "traces": [
+                {
+                    "key": "x",
+                    "color": [
+                        255,
+                        15,
+                        15
+                    ],
+                    "thickness": 0.0065
+                },
+                {
+                    "key": "y",
+                    "color": [
+                        5,
+                        255,
+                        0
+                    ],
+                    "thickness": 0.0065
+                },
+                {
+                    "key": "z",
+                    "color": [
+                        0,
+                        77,
+                        255
+                    ],
+                    "thickness": 0.0065
+                }
+            ]
+        },
+        {
+            "key": "high",
+            "title": "High xyz",
+            "position": [
+                0,
+                0
+            ],
+            "traces": [
+                {
+                    "key": "x",
+                    "color": [
+                        255,
+                        15,
+                        15
+                    ],
+                    "thickness": 0.0065
+                },
+                {
+                    "key": "y",
+                    "color": [
+                        5,
+                        255,
+                        0
+                    ],
+                    "thickness": 0.0065
+                },
+                {
+                    "key": "z",
+                    "color": [
+                        0,
+                        77,
+                        255
+                    ],
+                    "thickness": 0.0065
+                }
+            ]
+        },
+        {
+            "key": "gyro",
+            "title": "Gyro",
+            "position": [
+                2,
+                1
+            ],
+            "traces": [
+                {
+                    "key": "x",
+                    "color": [
+                        255,
+                        15,
+                        15
+                    ],
+                    "thickness": 0.0065
+                },
+                {
+                    "key": "y",
+                    "color": [
+                        5,
+                        255,
+                        0
+                    ],
+                    "thickness": 0.0065
+                },
+                {
+                    "key": "z",
+                    "color": [
+                        0,
+                        77,
+                        255
+                    ],
+                    "thickness": 0.0065
+                }
+            ]
+        },
+        {
+            "key": "temp_pi",
+            "title": "Pi Temp (live)",
+            "position": [
+                1,
+                1
+            ],
+            "traces": [
+                {
+                    "key": "default",
+                    "color": [
+                        255,
+                        9,
+                        110
+                    ],
+                    "thickness": 0.004
+                }
+            ]
+        },
+        {
+            "key": "temp",
+            "title": "Temperature (data)",
+            "position": [
+                1,
+                1
+            ],
+            "traces": [
+                {
+                    "key": "default",
+                    "color": [
+                        255,
+                        9,
+                        110
+                    ],
+                    "thickness": 0.002
+                }
+            ]
+        },
+        {
+            "key": "alt",
+            "title": "Altitude",
+            "position": [
+                2,
+                0
+            ],
+            "traces": [
+                {
+                    "key": "default",
+                    "color": [
+                        9,
+                        255,
+                        154
+                    ],
+                    "thickness": 0.004
+                }
+            ]
+        }
+    ]
+}

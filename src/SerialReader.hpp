@@ -20,16 +20,16 @@ struct SerialReader
     std::vector<std::vector<std::string>> delta_parsed{};
     u64 last_newline = 0;
 
-    SerialReader()
+    SerialReader(const std::string& port = "COM5")
     {
         std::ofstream(python_file, std::ios::binary)
             .write(python_file_contents, std::strlen(python_file_contents));
 
         // TODO let user enter this?
-        start_reader();
+        start_reader(port);
     }
 
-    void start_reader(std::string port = "COM5")
+    void start_reader(const std::string& port)
     {
         // https://stackoverflow.com/a/33903085
         system(fmt::format("start cmd /c \"python {} {}\"", python_file, port).c_str());
@@ -39,7 +39,12 @@ struct SerialReader
     {
         const auto new_data = file::read_unsafe(file::text, data_file);
         // cud be empty if write failed, or cud be same size if no change to file
-        if (new_data.size() <= data.size()) { return; }
+        if (new_data.size() <= data.size())
+        {
+            delta        = {};
+            delta_parsed = {};
+            return;
+        }
 
         u64 new_last_newline = 0;
         for (u64 i = last_newline + 1; i < new_data.size(); i++)

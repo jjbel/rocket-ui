@@ -21,10 +21,12 @@ set(CMAKE_TOOLCHAIN_FILE ${CMAKE_BINARY_DIR}/conan_toolchain.cmake)
 project(rocket-ui CXX) # Create Project
 
 find_package(samarium CONFIG REQUIRED)
+find_package(RapidJSON REQUIRED)
 
 add_executable(rocket-ui src/main.cpp)
 target_compile_features(rocket-ui PUBLIC cxx_std_20) # set C++ standard
 target_link_libraries(rocket-ui samarium::samarium)
+target_link_libraries(rocket-ui rapidjson)
 
 # TODO for now not using this, just running it thru python
 # if(CURRENT_EXAMPLE)

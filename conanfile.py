@@ -33,6 +33,7 @@ class SamariumConan(ConanFile):
             "freetype/2.13.2",
 
             "samarium/1.1.0",
+            "rapidjson/cci.20230929"
         ]
 
         for dep in deps:
