@@ -6,7 +6,7 @@ execute_process(
         # TODO conan args: make sure they're correct
         COMMAND ${CONAN_EXE} install .
         -b missing
-        # -vquiet
+        -vquiet
         -of ${CMAKE_BINARY_DIR}
         # -pr:b=default -pr=default
         -s build_type=${CMAKE_BUILD_TYPE}
@@ -22,7 +22,7 @@ project(rocket-ui CXX) # Create Project
 
 find_package(samarium CONFIG REQUIRED)
 
-add_executable(rocket-ui main.cpp)
+add_executable(rocket-ui src/main.cpp)
 target_compile_features(rocket-ui PUBLIC cxx_std_20) # set C++ standard
 target_link_libraries(rocket-ui samarium::samarium)
 
